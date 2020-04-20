@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-import { HttpClientService } from './../../service/http-client.service';
+import { UserserviceService } from './../../service/userservice.service';
 
 // core components
 import {
@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public totalUsers: Number;
 
-  constructor(private httpClientService: HttpClientService) { }
+  constructor(private userService: UserserviceService) { }
 
   ngOnInit() {
 
@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
   }
 
   private getAllUsersCount(){
-    this.httpClientService
+    this.userService
         .getTotalUsers()
         .subscribe(response => this.handleSuccessfulTotalUsersResponse(response));
   }
