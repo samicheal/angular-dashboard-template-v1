@@ -1,7 +1,8 @@
-import { UserserviceService } from './../../service/userservice.service';
+import { NotificationService } from './../../service/notification/notification.service';
+import { UserserviceService } from '../../service/userservice/userservice.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/User';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -14,7 +15,8 @@ export class UsersComponent implements OnInit {
   users: Array<User>;
   totalUsers: Number;
   
-  constructor(private userService: UserserviceService) {
+  constructor(private userService: UserserviceService,
+             private notificationService: NotificationService) {
    }
 
   ngOnInit(): void {
@@ -22,17 +24,13 @@ export class UsersComponent implements OnInit {
     this.getAllUsersCount();
   }
 
-  onSubmit(){
-    console.log("about to create new user.....");
-  }
-
-  private retrieveAllUsers(){
+  public retrieveAllUsers(){
     this.userService
         .getUsers()
         .subscribe(response => this.users = response);
   }
 
-  private getAllUsersCount(){
+  public getAllUsersCount(){
     this.userService
         .getTotalUsers()
         .subscribe(response => this.totalUsers = response);

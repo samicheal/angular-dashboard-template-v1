@@ -1,9 +1,10 @@
+import { UserModalContent } from '../../pages/modals/users/user-add-modal/user-add-modal.component';
+import { UserModalComponent } from '../../pages/modals/users/user-add-modal/user-modal-component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ClipboardModule } from 'ngx-clipboard';
 
@@ -14,9 +15,7 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { UsersComponent } from './../../pages/users/users.component';
-
-import { NgbdModalComponent, NgbdModalContent } from '../../modal/user/user-add-modal/user-add-modal.component';
-// import { ToastrModule } from 'ngx-toastr';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,8 @@ import { NgbdModalComponent, NgbdModalContent } from '../../modal/user/user-add-
     IconsComponent,
     MapsComponent,
     UsersComponent,
-    NgbdModalComponent,
-    NgbdModalContent
+    UserModalComponent,
+    UserModalContent
   ],
   imports: [
     CommonModule,
@@ -35,10 +34,11 @@ import { NgbdModalComponent, NgbdModalContent } from '../../modal/user/user-add-
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    NgbModule
   ],
-  entryComponents: [NgbdModalContent]
+  providers: [],
+  entryComponents: [UserModalContent]
 })
 
 export class AdminLayoutModule {}

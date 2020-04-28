@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-import { UserserviceService } from './../../service/userservice.service';
+import { UserserviceService } from '../../service/userservice/userservice.service';
 
 // core components
 import {

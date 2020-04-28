@@ -1,4 +1,3 @@
-import { UserserviceService } from './service/userservice.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,10 +12,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import {HttpClientModule} from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
+import { ToastrModule } from 'ngx-toastr';
 
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -24,7 +26,8 @@ import { ComponentsModule } from './components/components.module';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   declarations: [
     AppComponent,
