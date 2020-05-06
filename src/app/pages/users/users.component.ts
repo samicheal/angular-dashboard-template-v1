@@ -1,8 +1,8 @@
-import { NotificationService } from './../../service/notification/notification.service';
 import { UserserviceService } from '../../service/userservice/userservice.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/User';
 import { FormGroup} from '@angular/forms';
+import { UserDeleteModalComponent } from '../modals/users/user-delete-modal/user-delete-modal.component';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   totalUsers: Number;
   
   constructor(private userService: UserserviceService,
-             private notificationService: NotificationService) {
+             private userDeleteModalComponent: UserDeleteModalComponent) {
    }
 
   ngOnInit(): void {
@@ -34,5 +34,9 @@ export class UsersComponent implements OnInit {
     this.userService
         .getTotalUsers()
         .subscribe(response => this.totalUsers = response);
+  }
+
+  initiateDismiss(id, entity){
+    this.userDeleteModalComponent.open(id, entity);
   }
 }

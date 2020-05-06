@@ -30,4 +30,9 @@ export class UserserviceService {
     return this.httpClient
             .get<Number>(this.onlineStoreUrl + '/get-users-count');
   }
+
+  public deleteUser(id){
+    return this.httpClient
+            .delete(this.onlineStoreUrl + '/delete/'+id);
+  }
 }

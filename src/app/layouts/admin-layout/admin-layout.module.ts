@@ -16,6 +16,8 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { UsersComponent } from './../../pages/users/users.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteModalContent } from 'src/app/pages/modals/users/user-delete-modal/user-delete-modal-content';
+import { UserDeleteModalComponent } from 'src/app/pages/modals/users/user-delete-modal/user-delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +39,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ClipboardModule,
     NgbModule
   ],
-  providers: [],
-  entryComponents: [UserModalContent]
+  providers: [UserDeleteModalComponent],
+  entryComponents: [
+    UserModalContent
+  ]
 })
 
 export class AdminLayoutModule {}

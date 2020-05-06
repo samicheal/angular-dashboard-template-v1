@@ -26,6 +26,7 @@ export class UserModalContent implements OnInit {
       type: new FormControl('', Validators.required)
     });
   }
+  
   constructor(public activeModal: NgbActiveModal,
               private userService: UserserviceService,
               private responseHandler: HttpResponseHanlderService,
